@@ -9,13 +9,12 @@ permissions:
  contents: read# This is required for actions/checkout@v2
 
 jobs:
-  push:
+ push:
     name: Deploy Site
     runs-on: ubuntu-latest
-
-env:
-    AWS_DEFAULT_REGION: us-east-1
-
+steps:
+    env:
+      AWS_DEFAULT_REGION: us-east-1
 steps:
    - name: configureawscredentials
      uses: aws-actions/configure-aws-credentials@v1
