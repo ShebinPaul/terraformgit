@@ -9,12 +9,10 @@ permissions:
  contents: read# This is required for actions/checkout@v2
 
 jobs:
- push:
+  push:
     name: Deploy Site
     runs-on: ubuntu-latest
-steps:
-    env:
-      AWS_DEFAULT_REGION: us-east-1
+
 steps:
    - name: configureawscredentials
      uses: aws-actions/configure-aws-credentials@v1
@@ -22,7 +20,7 @@ steps:
        role-to-assume: arn:aws:iam::282560401657:oidc-provider/token.actions.githubusercontent.com
        role-session-name: github-ivnc-test
 
-       aws-region: ${{env.AWS_DEFAULT_REGION}}
+       aws-region: us-east-1
 
    - name: Checkout
      uses: actions/checkout@v2
@@ -31,7 +29,7 @@ steps:
      with:
        role-to-assume: arn:aws:iam::282560401657:oidc-provider/token.actions.githubusercontent.com
        role-session-name: github-ivnc-test
-       aws-region: ${{env.AWS_DEFAULT_REGION}}
+       aws-region: us-east-1
    - name: Terraform Validate
      uses: hashicorp/terraform-github-actions/validate@v0.3.7
    - name: Terraform Apply
@@ -39,7 +37,7 @@ steps:
      with:
        role-to-assume: arn:aws:iam::282560401657:oidc-provider/token.actions.githubusercontent.com
        role-session-name: github-ivnc-test
-       aws-region: ${{env.AWS_DEFAULT_REGION}}
+       aws-region: us-east-1
    - name: Sync S3
      uses: ivnc-test-access/s3-sync-action@main
      with:
