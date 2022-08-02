@@ -29,11 +29,11 @@ jobs:
        role-session-name: github-ivnc-test
        aws-region: us-east-1
       env:
-        SOURCE_DIR: './Terraform'
+        TF_ACTION_WORKING_DIR: 'Terraform'
     - name: Terraform plan
       uses: hashicorp/terraform-github-actions/validate@v0.3.7
       env:
-        SOURCE_DIR: './Terraform'
+        TF_ACTION_WORKING_DIR: 'Terraform'
     - name: Terraform Apply
       uses: hashicorp/terraform-github-actions/apply@v0.4.0
       with:
@@ -41,5 +41,5 @@ jobs:
        role-session-name: github-ivnc-test1
        aws-region: us-east-1
       env:
-        SOURCE_DIR: './Terraform'
+        TF_ACTION_WORKING_DIR: 'Terraform'
         
