@@ -23,6 +23,9 @@ jobs:
     - name: pwd
       run: |
           pwd
+    - name: pwd
+      run: |
+          ls
     - name: init
       run: |
           terraform init
