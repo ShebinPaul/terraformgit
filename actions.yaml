@@ -36,7 +36,4 @@ jobs:
        role-to-assume: arn:aws:iam::282560401657:role/github-ivnc-test
        role-session-name: github-ivnc-test
        aws-region: us-east-1
-      env:
-        SOURCE_DIR: './src'
-        AWS_REGION: 'us-east-1'
-        AWS_S3_BUCKET: 'github-ivnc-test'
+      
