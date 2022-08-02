@@ -20,6 +20,9 @@ jobs:
 
        aws-region: us-east-1
 
+    - name: pwd
+      run: |
+          pwd
     - name: init
       run: |
           terraform init
