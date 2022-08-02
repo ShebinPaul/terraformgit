@@ -1,6 +1,6 @@
 terraform {
   required_providers {
-    aws = {
+    aws  {
       source = "hashicorp/aws"
       version = "4.22.0"
     }
@@ -12,11 +12,7 @@ provider "aws" {
   region  = "east-us-1"
 }
   
-backend "s3" {
-       bucket = "ivnc-test-access"
-       #key    = "[Remote_State_S3_Bucket_Key]"
-       region = "east-us-1"
-   }
+
 
 
 
