@@ -25,7 +25,7 @@ jobs:
     - name: Terraform Init
       uses: hashicorp/terraform-github-actions/init@v0.4.0
       with:
-       role-to-assume: arn:aws:iam::282560401657:oidc-provider/token.actions.githubusercontent.com
+       role-to-assume: arn:aws:iam::282560401657:role/github-ivnc-test
        role-session-name: github-ivnc-test
        aws-region: us-east-1
     - name: Terraform Validate
@@ -33,7 +33,7 @@ jobs:
     - name: Terraform Apply
       uses: hashicorp/terraform-github-actions/apply@v0.4.0
       with:
-       role-to-assume: arn:aws:iam::282560401657:oidc-provider/token.actions.githubusercontent.com
+       role-to-assume: arn:aws:iam::282560401657:role/github-ivnc-test
        role-session-name: github-ivnc-test
        aws-region: us-east-1
       env:
