@@ -36,11 +36,6 @@ jobs:
        role-to-assume: arn:aws:iam::282560401657:oidc-provider/token.actions.githubusercontent.com
        role-session-name: github-ivnc-test
        aws-region: us-east-1
-    - name: Sync S3
-      uses: ivnc-test-access/s3-sync-action@main
-      with:
-       role-to-assume: arn:aws:iam::282560401657:oidc-provider/token.actions.githubusercontent.com
-       role-session-name: github-ivnc-test
       env:
         SOURCE_DIR: './src'
         AWS_REGION: 'us-east-1'
