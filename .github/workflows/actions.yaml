@@ -28,8 +28,12 @@ jobs:
        role-to-assume: arn:aws:iam::282560401657:role/github-ivnc-test
        role-session-name: github-ivnc-test
        aws-region: us-east-1
-    - name: Terraform Validate
+      env:
+        SOURCE_DIR: './Terraform'
+    - name: Terraform plan
       uses: hashicorp/terraform-github-actions/validate@v0.3.7
+      env:
+        SOURCE_DIR: './Terraform'
     - name: Terraform Apply
       uses: hashicorp/terraform-github-actions/apply@v0.4.0
       with:
@@ -37,6 +41,5 @@ jobs:
        role-session-name: github-ivnc-test1
        aws-region: us-east-1
       env:
-        SOURCE_DIR: './src'
-        AWS_REGION: 'us-east-1'
-        AWS_S3_BUCKET: 'github-ivnc-test'
+        SOURCE_DIR: './Terraform'
+        
