@@ -31,7 +31,7 @@ jobs:
       env:
         TF_ACTION_WORKING_DIR: 'Terraform'
     - name: Terraform plan
-      uses: hashicorp/terraform-github-actions/plan@v0.4.0
+      uses: hashicorp/terraform-github-actions/validate@v0.4.0
       env:
         TF_ACTION_WORKING_DIR: 'Terraform'
     - name: Terraform Apply
