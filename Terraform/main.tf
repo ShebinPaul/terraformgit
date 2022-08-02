@@ -1,19 +1,11 @@
 terraform {
   required_providers {
-    aws  {
+    aws = {
       source = "hashicorp/aws"
       version = "4.22.0"
     }
   }
 }
-
-provider "aws" {
-  version = "~>3.0"
-  region  = "east-us-1"
-}
-  
-
-
 
 
 resource "aws_s3_bucket" "s3Bucket" {
