@@ -2,7 +2,7 @@ name: Example pipeline
 on:
   push:
     branches:
-      - main
+      - master
 
 permissions:
  id-token: write
